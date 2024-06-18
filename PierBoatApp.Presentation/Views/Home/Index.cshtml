@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Calendario com Eventos</title>
+    <style>
+        /* Reduz todo o conteúdo em 70% */
+        body {
+            transform: scale(0.7);
+            transform-origin: top left;
+        }
+
+        .navbar .nav-item:last-child {
+            margin-top: auto; /* Posicionando o último item no final */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">december 2015</div>
+                    <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sab</div>
+                </div>
+                <div class="days"></div>
+                <div class="goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mês/ano" class="date-input" />
+                        <button class="goto-btn">Ir</button>
+                    </div>
+                    <button class="today-btn">Hoje</button>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="today-date">
+                <div class="event-day">Qua</div>
+                <div class="event-date">18 março 2024</div>
+            </div>
+            <div class="events"></div>
+
+            <div class="add-event-footer">
+                <a href="/Lancha/Cadastrar?" style="text-decoration: none; color: inherit;">
+                    <button class="add-event-btn">Adicionar Evento</button>
+                </a>
+            </div>
+        </div>
+        <button class="add-event">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Adicionar evento de clique às divs de data
+        document.querySelectorAll('.data-item').forEach(item => {
+            item.addEventListener('click', function (event) {
+                // Obter o texto da div clicada, que representa a data
+                var dataSelecionada = event.target.innerText;
+
+                // Redirecionar para a página de cadastro com a data selecionada
+                redirectToPage(dataSelecionada);
+            });
+        });
+
+        function redirectToPage(data) {
+            // Redirecionar para a página de cadastro com a data como parâmetro na URL
+            window.location.href = "/Cadastrar?data=" + encodeURIComponent(data);
+        }
+    </script>
+
+
+</body>
+</html>
+

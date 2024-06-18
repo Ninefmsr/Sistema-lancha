@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PierBoatApp - controle de agendamento</title>
+    <!-- bibliotecas CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .navbar-toggler-icon {
+            display: block;
+            width: 20px; /* Largura dos tracinhos */
+            height: 2px; /* Altura dos tracinhos */
+            background-color: #fff; /* Cor dos tracinhos */
+            margin-bottom: 4px; /* Espaçamento entre os ícones */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Para evitar barras de rolagem horizontais */
+        }
+
+        .navbar {
+            z-index: 9999; /* Para garantir que a barra de navegação esteja acima da imagem de fundo */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 60px; /* Definir a largura desejada para a barra de navegação */
+            height: 100%; /* Tornar a barra de navegação com altura total */
+            padding: 1rem 0; /* Adicionar um pequeno espaçamento no topo e no fundo */
+            background-color: #007bff; /* Cor de fundo da barra de navegação */
+            transition: width 0.3s; /* Adicionar uma transição suave para a mudança de largura */
+        }
+
+            .navbar:hover {
+                width: 150px; /* Largura expandida ao passar o mouse */
+            }
+
+            .navbar .navbar-nav {
+                width: 150px; /* Largura do menu de navegação */
+                display: none; /* Ocultar o menu de navegação por padrão */
+                flex-direction: column;
+                align-items: center;
+                padding-top: 60px; /* Espaçamento superior para evitar que os traços sobreponham as opções */
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                background-color: #007bff; /* Cor de fundo do menu de navegação */
+            }
+
+            .navbar:hover .navbar-nav {
+                display: flex; /* Exibir o menu de navegação quando estiver aberto */
+            }
+
+            .navbar .nav-item {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            .navbar .nav-link {
+                width: 100%;
+                padding: 0.5rem 0;
+                color: #fff; /* Cor do texto */
+                white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+            }
+
+            .navbar .navbar-toggler {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column; /* Mudança para exibir os ícones de menu em uma coluna */
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                border: none;
+                background: none;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+
+
+        .content {
+            padding-top: 1rem; /* Ajustar o espaçamento superior para levar em conta a barra de navegação */
+            margin-left: 60px; /* Leva em consideração a largura da barra de navegação */
+        }
+
+        .navbar .nav-item:last-child {
+            margin-top: auto; /* Posicionando o último item no final */
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-nav">
+                <ul class="navbar-nav collapse navbar-collapse" id="navbarNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index">Pagina inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Lancha/Cadastrar">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Lancha/ConsultaAgendamento">Consulta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Logout"
+                           onclick="return confirm('Deseja realmente sair do sistema?');">
+                            Sair do sistema
+                        </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Conteúdo principal -->
+    <!-- Div para a imagem de fundo -->
+    <div>
+
+        <!-- local para inserir o conteúdo das páginas -->
+        @RenderBody()
+
+    </div>
+    <div>
+        <!-- bibliotecas JavaScript -->
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // JavaScript para mostrar o menu de navegação ao passar o mouse nos traços
+            document.querySelector('.navbar-toggler').addEventListener('mouseenter', function () {
+                document.querySelector('.navbar-nav').classList.add('show');
+                document.querySelector('.content').classList.add('content-shifted');
+            });
+
+            // JavaScript para ocultar o menu de navegação ao tirar o mouse dos traços
+            document.querySelector('.navbar-nav').addEventListener('mouseleave', function () {
+                document.querySelector('.navbar-nav').classList.remove('show');
+                document.querySelector('.content').classList.remove('content-shifted');
+            });
+        </script>
+</body>
+</html>

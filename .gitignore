@@ -1,0 +1,171 @@
+# Logs
+*.log
+logs/
+log/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Build Results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+msbuild.log
+
+# MSTest test Results
+[Tt]est[Rr]esult*
+[Tt]est[Rr]esults/
+[Bb]uild[Ll]og.*
+[Bb]uild[Ll]ogs/
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build directory
+build/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# SVN directory
+.svn/
+
+# Web solution and project files
+.vs/
+_ReSharper*
+.vscode/
+node_modules/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish directory
+publish/
+*.publish.xml
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Roslyn cache directories
+*.nuget
+.vscode/
+.vscode-test/
+
+# Rider
+.idea/
+.idea_modules/
+.idea_workspace.xml
+*.iml
+
+# User-specific files
+*.rsuser
+*.rspscc
+*.sln.docstates
+*.sln.ide.config
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# JetBrains Rider
+.idea/
+*.sln.ide
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Other
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Local History for Visual Studio
+.localhistory/
+
+# Rider
+.idea/
+.idea_modules/
+.idea_workspace.xml
+*.iml
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Web solution and project files
+.vs/
+_ReSharper*
+
+# Visual Studio 2019
+.vs/ .vsconfig
+
+# Rider
+.idea/
+.idea_modules/
+.idea_workspace.xml
+*.iml
+
+# User-specific files
+*.rsuser
+*.rspscc
+*.sln.docstates
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/

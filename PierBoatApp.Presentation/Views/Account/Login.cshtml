@@ -1,0 +1,69 @@
+﻿@model PierBoatApp.Presentation.Models.Account.AccountLoginViewModel
+
+
+
+@{
+    //definindo o layout da página
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+
+
+
+    .form-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+        max-width: 400px; /* Define a largura máxima do formulário */
+    }
+</style>
+
+
+<div class="background-image">
+    <!-- Adicionando a classe background-image -->
+    @using (Html.BeginForm())
+    {
+        <div class="container form-container">
+            <form>
+                <div class="mb-2">
+                    <label style="color: white;"><strong>Email de acesso</strong></label>
+                    @Html.TextBoxFor(model => model.Email,
+                             new
+                             {
+                                 @class = "form-control",
+                                 @placeholder = "Ex: joaosilva@gmail.com"
+                             })
+                    <span class="text-danger">
+                        <b>@Html.ValidationMessageFor(model => model.Email)</b>
+                    </span>
+                </div>
+
+                <div class="mb-2">
+
+                    <div class="mb-2">
+                        <label class="text-white"><strong>Senha:</strong></label>
+                        @Html.PasswordFor(model => model.Senha,
+                                 new { @class = "form-control" })
+                        <span class="text-danger">
+                            <b> @Html.ValidationMessageFor(model => model.Senha)</b>
+                        </span>
+                    </div>
+
+                    <div class="mb-2 d-grid">
+                        <input type="submit" value="Acessar Sistema"
+                               class="btn btn-primary" />
+                    </div>
+
+                </div>
+
+                <div class="mb-2 d-grid">
+                    <a href="/Account/ForgotPassword" class="btn btn-warning text-black"><strong>Esqueci minha senha?</strong></a>
+                </div>
+            </form>
+        </div>
+    }
+</div>
